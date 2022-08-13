@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 
 const products = [
     {
@@ -38,6 +39,15 @@ const products = [
 
 function Search() {
     const [length, setLength] = useState(0);
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        axios.get(window.location.href).then(response => {
+            setPosts(response);
+            setLength(posts.length);
+        })
+    })
+
     return (
         <div className='relative flex justify-center mt-40 w-screen text-center'>
             <div className='text-xl font-bold'>
@@ -48,17 +58,15 @@ function Search() {
         <h2 className="sr-only">Products</h2>
 
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-            <a key={product.id} href={product.href} className="group">
+          {posts.map((post) => (
+            <a key={post.id} href={'/post/'+post.id} className="group">
               <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                 <img
-                  src={product.imageSrc}
-                  alt={product.imageAlt}
+                  src={post.imgUrl}
+                  alt={post.imgUrl}
                   className="w-full h-full object-center object-cover group-hover:opacity-75"
                 />
               </div>
-              <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
-              <p className="mt-1 text-lg font-medium text-gray-900">{product.price}</p>
             </a>
           ))}
         </div>

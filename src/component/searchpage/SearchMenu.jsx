@@ -14,7 +14,7 @@ export default function Example(props) {
   const [selected, setSelected] = useState(value[0])
 
   return (
-    <Listbox value={selected} onChange={setSelected}>
+    <Listbox value={selected} onChange={props.set}>
       {({ open }) => (
         <>
           <div className="mt-1 relative flex">
