@@ -76,7 +76,7 @@ function Sectionpage(props) {
     return (
         <div className="h-3/4 bg-white snap-start">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900">{props.title}</h2>
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">{props.title}</h2>
 
         <div className="relative w-full overflow-auto">
             <div className="w-full grid-flow-col grid auto-cols-max gap-x-6">
