@@ -3,21 +3,19 @@ import { useLocation } from "react-router-dom";
 import axios from 'axios'
 
 function Search() {
-    const [length, setLength] = useState(0);
     const [posts, setPosts] = useState([]);
    
     useEffect(() => {
       axios.get('http://43.200.163.136:8080/api/festivals')
         .then((result)=>{
             setPosts(result.data.data);
-            setLength(posts.length);
         })
     },[]);
 
     return (
         <div className='relative flex justify-center mt-40 w-screen text-center'>
         <div className='text-xl font-bold'>
-                검색 결과 {length}건
+                검색 결과!
         </div>
         <div className="bg-white">
           <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
