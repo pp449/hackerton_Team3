@@ -4,7 +4,7 @@ import './Searchpage.css'
 
 function Searchpage() {
     return (
-    <div className="Searchpage_BG">
+    <div className="Searchpage_BG snap-start">
         <div className="Searchpage_support">
             <div>
                 <div className="Searchpage_text">passtival에서<br/>원하는 축제를<br/>찾아보세요</div>
