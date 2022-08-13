@@ -1,9 +1,10 @@
 {
-  "name": "papago-front",
+  "name": "passtival",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@aws-amplify/ui-react": "^2.15.7",
+    "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.6",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
