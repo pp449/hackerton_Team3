@@ -37,7 +37,7 @@ export default function Example(props) {
               <Listbox.Options className="absolute z-10 mt-1 w-60px bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
                 {value.map((value) => (
                   <Listbox.Option
-                    key={value.id}
+                    key={value.name}
                     className={({ active }) =>
                       classNames(
                         active ? 'text-white bg-indigo-600' : 'text-gray-900',
