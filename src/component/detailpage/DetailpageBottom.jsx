@@ -7,7 +7,7 @@ const product = {
         '부산광역시 북구',
 }
 
-function DetailpageBottom() {
+function DetailpageBottom(props) {
     return(
         <div>
             <div className="text-2xl font-GoogleFont2">📢 소개</div>

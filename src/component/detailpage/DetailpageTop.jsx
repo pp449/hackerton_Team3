@@ -13,13 +13,8 @@ const product = {
   ],
 }
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-export default function Example() {
-
-  return (
+function DetailpageTop(props) {
+  return(
     <div className="bg-white">
       <div className="pt-6">
 
@@ -57,5 +52,7 @@ export default function Example() {
         </div>
       </div>
     </div>
-  )
+  );
 }
+
+export default DetailpageTop;
