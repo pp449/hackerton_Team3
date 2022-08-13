@@ -10,10 +10,10 @@ const product = {
 function DetailpageBottom(props) {
     return(
         <div>
-            <div className="text-2xl font-GoogleFont2">📢 소개</div>
-            <p className="text-base text-gray-900">{product.description}</p><br/><br/>
-            <div className="text-2xl font-GoogleFont2">📢 주소</div>
-            <p className="text-base text-gray-900">{product.address}</p>
+            <div className="text-3xl font-GoogleFont2">📢 소개</div>
+            <p className="text-2xl text-base text-gray-900">{props.value.content}</p><br/><br/>
+            <div className="text-3xl font-GoogleFont2">📢 주소</div>
+            <p className="text-2xl text-base text-gray-900">{props.value.location}</p>
         </div>
     )
 }

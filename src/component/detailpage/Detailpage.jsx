@@ -6,17 +6,19 @@ import axios from 'axios'
 
 function Detailpage() {
     const { id } = useParams();
+    let [detailData, SetdetailData] = useState([]);
+
     useEffect(() => {
         axios.get('http://43.200.163.136:8080/api/festival/'+id)
           .then((result)=>{
-            console.log(result.data.data);
+            SetdetailData(result.data.data);
           })
       },[]);
 
     return(
-        <div className="px-52">
-            <DetailpageTop/>
-            <DetailpageBottom/>
+        <div className="px-52 my-11">
+            <DetailpageTop value={detailData}/>
+            <DetailpageBottom value={detailData}/>
         </div>
     )
 }
