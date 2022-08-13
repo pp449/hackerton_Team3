@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const months = [
     {
-      id: null,
+      id: "none",
       name: '개최 월',
     },
     {
@@ -58,27 +58,75 @@ const months = [
 ]
 
 const areas = [
-    {
-        id: 1,
-        name: '개최 지역',
-    },
-    {
-        id:2,
-        name:"부산진구"
-    },
-    {
-        id:3,
-        name:"북구"
-    },
-    {
-        id:4,
-        name:"금정구"
-    },
+  {
+    id: "none",
+    name: '개최 지역',
+  },
+  {
+    id: 'BUK_GU',
+    name:"북구"
+  },
+  {
+    id: 'GEUMJEONG_GU',
+    name:"금정구"
+  },
+  {
+    id: 'GIJANG_GU',
+    name:"기장군"
+  },
+  {
+    id: 'DONGNAE_GU',
+    name:"동래구"
+  },
+  {
+    id: 'YEONJE_GU',
+    name:"연제구"
+  },
+  {
+    id: 'SASANG_GU',
+    name:"사상구"
+  },
+  {
+    id: 'DONG_GU',
+    name:"동구"
+  },
+  {
+    id: 'NAM_GU',
+    name:"남구"
+  },
+  {
+    id: 'SEO_GU',
+    name:"서구"
+  },
+  {
+    id: 'JUNG_GU',
+    name:"중구"
+  },
+  {
+    id: 'YEONGDO_GU',
+    name:"영도구"
+  },
+  {
+    id: 'SAHA_GU',
+    name:"사하구"
+  },
+  {
+    id: 'GANGSEO_GU',
+    name:"강서구"
+  },
+  {
+    id: 'HEAUNDAE_GU',
+    name:"해운대구"
+  },
+  {
+    id: 'SUYEONG_GU',
+    name:"수영구"
+  },
 ]
 
 const frees = [
     {
-        id:null,
+        id:"none",
         name:"유/무료"
     },
     {
@@ -100,18 +148,18 @@ function Searchpagetmp() {
     return(
         <div className="relative pt-36 pb-36 w-full bg-festivalImg opacity-80 text-center bg-cover table snap-start">
             <div className="table-cell align-middle ">
-                <div className="text-8xl text-white font-GoogleFont pb-14 font-thin">passtival에서<br/>원하는 축제를<br/>찾아보세요</div>
+                <div className="text-8xl text-white font-GoogleFont3 font-thin pb-14 font-thin">passtival에서<br/>원하는 축제를<br/>찾아보세요</div>
                 <div className="flex justify-center m-auto mt-50">
                     <SearchMenu value={months} set={setMonth}/>
                     <SearchMenu value={areas} set={setArea}/>
                     <SearchMenu value={frees} set={setFree}/>
                     <div className="inline-flex rounded-md">
-                        <a
-                        href={'/search?is-free='+free+'&month='+month+'&city='+area}
+                        <Link
+                        to={'/search?is-free='+free+'&month='+month+'&city='+area}
                          className="mt-0.5 h-10 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-black hover:opacity-90 bg-blue-400"
                          >
                          검색
-                         </a>
+                         </Link>
                     </div>
                 </div>
             </div>

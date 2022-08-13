@@ -38,20 +38,21 @@ const products = [
   ]
 
 function Search() {
-    const [length, setLength] = useState(0);
     const [posts, setPosts] = useState([]);
 
+    const URL = window.location.href.split('localhost:3000/')[1];
+
     useEffect(() => {
-        axios.get(window.location.href).then(response => {
-            setPosts(response);
-            setLength(posts.length);
-        })
-    })
+        axios.get('http://43.200.163.136:8080/api/festival/'+URL).then(response => {
+            console.log(response.data.data);
+            setPosts(response.data.data);
+        });
+    }, []);
 
     return (
         <div className='relative flex justify-center mt-40 w-screen text-center'>
             <div className='text-xl font-bold'>
-                검색 결과 {length}건
+                검색 결과 !
             </div>
             <div className="bg-white">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">

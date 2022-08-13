@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './page/home/Home';
 import Search from "./component/search/Search";
+import All from "./component/search/All";
 import Header from "./component/common/Header/Header";
 import Detailpage from "./component/detailpage/Detailpage";
 
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/all" element={<All />} />
           <Route path="/post/:id" element={<Detailpage />} />
         </Routes>
       </BrowserRouter>

@@ -3,8 +3,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        GoogleFont: ['Do Hyeon', 'sans-serif'],
+        GoogleFont: ['DynaPuff', 'cursive'],
         GoogleFont2: ['IBM Plex Sans KR', 'sans-serif'],
+        GoogleFont3: ['Jua', 'sans-serif'],
       },
       backgroundImage:{
         'festivalImg':"url('./img/festival.jpeg')",

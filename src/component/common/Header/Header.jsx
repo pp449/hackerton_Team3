@@ -32,7 +32,7 @@ function Header() {
                     src={process.env.PUBLIC_URL + '/pass-icon.svg'}
                     alt=""
                 />
-                <div className='ml-1 text-xl pb-1'>
+                <div className='ml-1 text-xl pb-1 font-GoogleFont'>
                     passtival
                 </div>
               </div>
