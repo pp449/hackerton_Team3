@@ -141,9 +141,9 @@ const frees = [
 
 
 function Searchpagetmp() {
-    const [month, setMonth] = useState();
-    const [area, setArea] = useState();
-    const [free, setFree] =useState();
+    const [month, setMonth] = useState('none');
+    const [area, setArea] = useState('none');
+    const [free, setFree] =useState('none');
 
     return(
         <div className="relative pt-36 pb-36 w-full bg-festivalImg opacity-80 text-center bg-cover table snap-start">

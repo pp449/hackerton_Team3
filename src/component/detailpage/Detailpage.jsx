@@ -6,18 +6,20 @@ import { useParams } from 'react-router-dom';
 
 
 function Detailpage() {
-    const [post, setPost] = useState([]);
-    const param = useParams();
+    const { id } = useParams();
+    let [detailData, SetdetailData] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://43.200.163.136:8080/api/festival/${param.id}`).then(response => {
-            setPost(response.data.data);
-        })
-    }, [])
+        axios.get('http://43.200.163.136:8080/api/festival/'+id)
+          .then((result)=>{
+            SetdetailData(result.data.data);
+          })
+      },[]);
+
     return(
-        <div className="px-52">
-            <DetailpageTop post={post}/>
-            <DetailpageBottom post={post}/>
+        <div className="px-52 my-11">
+            <DetailpageTop value={detailData}/>
+            <DetailpageBottom value={detailData}/>
         </div>
     )
 }
