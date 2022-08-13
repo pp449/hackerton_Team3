@@ -1,83 +1,81 @@
-import { useState } from 'react';
-import {Dropdown, DropdownButton, Button} from 'react-bootstrap';
+/* This example requires Tailwind CSS v2.0+ */
+import { Fragment, useState } from 'react'
+import { Listbox, Transition } from '@headlessui/react'
+import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 
-import './SearchMenu.css'
 
-function SearchMenu() {
 
-    let [FreeCharged, SetFreeCharged] = useState("유/무료");
-    let [Month, SetMonth] = useState("개최월");
-    let [Area, SetArea] = useState("개최 지역");
-
-    return (
-        <div className="SearchMenu_BG">
-            <DropdownButton id="dropdown_button" title={Month}>
-                <div id="dropdown_item">
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>1월</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>2월</Dropdown.Item>
-               <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>3월</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>4월</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>5월</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>6월</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>7월</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>8월</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>9월</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>10월</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>11월</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetMonth(e.target.textContent);
-                }}>12월</Dropdown.Item>
-                </div>
-            </DropdownButton>
-            
-            <DropdownButton id="dropdown_button" title={Area}>
-                <div id="dropdown_item">
-                    <Dropdown.Item onClick={(e) => {
-                        SetArea(e.target.textContent);
-                    }}>북구</Dropdown.Item>
-                    <Dropdown.Item onClick={(e) => {
-                        SetArea(e.target.textContent);
-                    }}>금정구</Dropdown.Item>
-                    <Dropdown.Item onClick={(e) => {
-                        SetArea(e.target.textContent);
-                    }}>부산진구</Dropdown.Item>
-                </div>
-            </DropdownButton>
-
-            <DropdownButton id="dropdown_button" title={FreeCharged}>
-                <Dropdown.Item onClick={(e) => {
-                    SetFreeCharged(e.target.textContent);
-                }}>유료</Dropdown.Item>
-                <Dropdown.Item onClick={(e) => {
-                    SetFreeCharged(e.target.textContent);
-                }}>무료</Dropdown.Item>
-            </DropdownButton>
-
-            <Button id="search_button">검색</Button>
-        </div>
-    );
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
 }
 
-export default SearchMenu;
+export default function Example(props) {
+  const value = props.value;
+
+  const [selected, setSelected] = useState(value[0])
+
+  return (
+    <Listbox value={selected} onChange={setSelected}>
+      {({ open }) => (
+        <>
+          <div className="mt-1 relative flex">
+            <Listbox.Button className="relative w-70px bg-white border border-slate-400 rounded-none shadow-sm mr-3 pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+              <span className="flex items-center">
+                <span className="ml-3 block truncate">{selected.name}</span>
+              </span>
+              <span className="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                <SelectorIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+              </span>
+            </Listbox.Button>
+
+            <Transition
+              show={open}
+              as={Fragment}
+              leave="transition ease-in duration-100"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
+              <Listbox.Options className="absolute z-10 mt-1 w-60px bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+                {value.map((value) => (
+                  <Listbox.Option
+                    key={value.id}
+                    className={({ active }) =>
+                      classNames(
+                        active ? 'text-white bg-indigo-600' : 'text-gray-900',
+                        'cursor-default select-none relative py-2 pl-3 pr-9'
+                      )
+                    }
+                    value={value}
+                  >
+                    {({ selected, active }) => (
+                      <>
+                        <div className="flex items-center">
+                          <span
+                            className={classNames(selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate')}
+                          >
+                            {value.name}
+                          </span>
+                        </div>
+
+                        {selected ? (
+                          <span
+                            className={classNames(
+                              active ? 'text-white' : 'text-indigo-600',
+                              'absolute inset-y-0 right-0 flex items-center pr-4'
+                            )}
+                          >
+                            <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                          </span>
+                        ) : null}
+                      </>
+                    )}
+                  </Listbox.Option>
+                ))}
+              </Listbox.Options>
+            </Transition>
+          </div>
+        </>
+      )}
+    </Listbox>
+  )
+}
