@@ -91,7 +91,7 @@ const free = [
 
 function Searchpagetmp() {
     return(
-        <div className="relative pt-36 pb-36 w-full bg-festivalImg opacity-90 text-center bg-cover table">
+        <div className="relative pt-36 pb-36 w-full bg-festivalImg opacity-90 text-center bg-cover table snap-start">
             <div className="table-cell align-middle ">
                 <div className="text-8xl text-white font-GoogleFont pb-14 font-thin">passtival에서<br/>원하는 축제를<br/>찾아보세요</div>
                 <div className="flex justify-center m-auto mt-50">
