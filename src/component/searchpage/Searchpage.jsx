@@ -115,7 +115,7 @@ const areas = [
     name:"강서구"
   },
   {
-    id: 'HEAUNDAE_GU',
+    id: 'HAEUNDAE_GU',
     name:"해운대구"
   },
   {

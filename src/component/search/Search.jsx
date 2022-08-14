@@ -15,7 +15,7 @@ function Search() {
 
     return (
         <div className='relative flex justify-center mt-40 w-screen text-center'>
-            <div className='text-xl font-bold'>
+            <div className='text-xl font-bold text-center'>
                 검색 결과 !
             </div>
             <div className="bg-white">
@@ -24,7 +24,8 @@ function Search() {
 
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {posts.map((post) => (
-            <a key={post.id} href={'/post/'+post.id} className="group">
+            console.log(post),
+            <a key={post.id} href={'/post/'+post.festivalId} className="group">
               <div className="w-full aspect-w-1 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden xl:aspect-w-7 xl:aspect-h-8">
                 <img
                   src={post.imgUrl}
@@ -32,6 +33,7 @@ function Search() {
                   className="w-full h-96 object-center object-cover group-hover:opacity-75"
                 />
               </div>
+              <h3 className="mt-4 text-sm text-gray-700">{post.festivalName}</h3>
             </a>
           ))}
         </div>
