@@ -1,5 +1,13 @@
 # 프로젝트 배경
-해당 프로젝트는 GDSC PKNU X DEU 에서 주최한 '놀다가는 앞마당 해커톤'에서 팀원들과 무박 2일동안 만들어낸 작업물이다.
+![everytime-web-1658105198330](https://user-images.githubusercontent.com/71641127/223046662-d6498d3f-a9d7-42b1-a49c-d9becbe9aee5.jpg)
+
+해커톤 링크 : <https://festa.io/events/2477>
+
+해커톤 날짜 : 2022/04/29 ~ 2022/04/30
+
+해당 프로젝트는 해커톤을 진행하며 만들어낸 결과물이다 
+
+<br />
 
 # 아이디어 배경
 팀원 모두 부산권에 살며 학교 축제나, 지역 축제에 참여해 즐기는 것을 좋아하지만 축제 정보가 여러군데 나눠져있고 찾기 힘들어 놓치는 경우가 많았다
@@ -13,10 +21,9 @@ Passtival 페이지에 접속하면 현재 부산권에서 진행중인 축제, 
 <img width="1840" alt="passtival" src="https://user-images.githubusercontent.com/71641127/190957671-732a8855-dee0-41c2-8b9e-3a6466d82eb7.png">
 
 
-# 사용된 기술스택
 ## Frontend
 - React
-- tailwind (css library)
+- tailwind
 
 ## Backend
 - Java
